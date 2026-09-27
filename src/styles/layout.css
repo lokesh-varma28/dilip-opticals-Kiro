@@ -1,0 +1,153 @@
+/* ==========================================================================
+   DILIP OPTICALS — LAYOUT & CONTAINERS
+   ========================================================================== */
+
+/* ── Containers ──────────────────────────────────────────────────────────── */
+.container,
+.container-xl {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+@media (min-width: 1400px) {
+  .container,
+  .container-xl {
+    max-width: 1320px;
+  }
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--container-wide-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* ── Page Shell ──────────────────────────────────────────────────────────── */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.main-content {
+  flex: 1 0 auto;
+  width: 100%;
+  padding-top: var(--header-total);
+}
+
+/* ── Section Spacing ─────────────────────────────────────────────────────── */
+.section {
+  padding-top: clamp(3.5rem, 5.5vw, 5.5rem);
+  padding-bottom: clamp(3.5rem, 5.5vw, 5.5rem);
+  position: relative;
+}
+
+.section-sm {
+  padding-top: clamp(2.5rem, 3.8vw, 3.75rem);
+  padding-bottom: clamp(2.5rem, 3.8vw, 3.75rem);
+}
+
+.section-xs {
+  padding-top: clamp(1.75rem, 2.5vw, 2.5rem);
+  padding-bottom: clamp(1.75rem, 2.5vw, 2.5rem);
+}
+
+.section-subtle {
+  background-color: var(--color-bg-subtle);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-warm {
+  background-color: var(--color-bg-warm);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-dark {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text-primary);
+}
+
+/* ── Grid Helpers ────────────────────────────────────────────────────────── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+/* ── Flex Helpers ────────────────────────────────────────────────────────── */
+.flex-row    { display: flex; flex-direction: row; }
+.flex-col    { display: flex; flex-direction: column; }
+.items-center    { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center  { justify-content: center; }
+.gap-sm  { gap: var(--space-3); }
+.gap-md  { gap: var(--space-6); }
+.gap-lg  { gap: var(--space-10); }
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: clamp(2.75rem, 5vw, 3.75rem);
+    padding-bottom: clamp(2.75rem, 5vw, 3.75rem);
+  }
+  .section-sm {
+    padding-top: clamp(2rem, 3.5vw, 2.75rem);
+    padding-bottom: clamp(2rem, 3.5vw, 2.75rem);
+  }
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding-top: clamp(2.25rem, 4.5vw, 3rem);
+    padding-bottom: clamp(2.25rem, 4.5vw, 3rem);
+  }
+  .section-sm {
+    padding-top: clamp(1.75rem, 3vw, 2.25rem);
+    padding-bottom: clamp(1.75rem, 3vw, 2.25rem);
+  }
+}
